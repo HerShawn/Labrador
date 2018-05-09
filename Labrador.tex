@@ -33,14 +33,11 @@
 \usepackage{amssymb}
 \usepackage{latexsym}
 
-%% 后来加上的
-%\usepackage{graphicx}
-%\usepackage{booktabs}
-%\usepackage{subfig}
+
 \usepackage{amsmath,amssymb}
-%\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-%% 后来加上的
+
 \usepackage{algorithm, algorithmic}
 \usepackage{cite}
 
@@ -94,7 +91,7 @@ Scene text detection has been a long standing hot and challenging research topic
 
 \end{frontmatter}
 \unhbox\keybox
-%\linenumbers
+
 
 %% main text
 \section{Introduction}
@@ -240,8 +237,6 @@ C(skel)=\frac{length(skel_{ol})}{length(skel)},
 \end{equation}
 
 Where $skel_{ol}=skel(sum_{ver}(skel)>1)$is defined as the overlapped part of $skel$, and $Sum_{ver}(skel)$ is a vector obtained by adding up the values of $skel$ in the vertical direction (see Fig \ref{fig.skel}(c)). Text often has higher concentration ratio $C(skel)$. Thus we can coarsely filter the candidate text skeletons by concentration ratio.
-
-%For further precise classification, we train a convolutional neural network including two convolutional layers with $n_1=96$ and $n_2=256$ filters respectively, two pooling layers and one fully-connected layer as illustrated in Fig \ref{fig.cnn}. Finally the network is trained discriminatively by squared hinge loss.
 
 For further precise classification, we train the CNN classifier similar to \citet{wang2012end}. As illustrated in Fig \ref{fig.cnn}, given a 32-by-32 input image, every 8-by-8 sub-windows are computed to obtain a 25-by-25-by-96 response map in the first layer. And then the map is average pooled to bring its dimensions to 5-by-5-by-96. Next, another convolution and pooling are stacked on top of the first layer to get a 2-by-2-by-256 response map in the second layer. Finally, these outputs are fully connected to the classification layer. And the network is trained discriminatively by backpropagating the L2-SVM classification error. Our dataset consists of examples from the ICDAR 2011 and 2013 training images, the English subset of the Chars74k dataset, and synthetically generated examples.
 
@@ -549,18 +544,6 @@ Method & Recall & Precision & F-score \\
 As shown in table \ref{tab.msra}, our proposed approach achieves recall 0.70, precision 0.79 and f-score 0.75 on MSRA-TD dataset, which outperform other methods significantly. In summary, our method could successfully detect text in natural images with multiple orientations and mixture of multi-language.
 
 In table \ref{tab.deep}, deep learning based methods like TextBoxes \citep{Liao2016TextBoxes} have achieved excellent results. However, only high performance workstation and massive samples could effectively train the deep CNN proposed in above methods, which means the actual application scenario may be limited. Instead, skeleton-cut detector is a lightweight conventional text detector, which is designed to solve edge-adhesion problem, and could be run on ordinary machine (without a GPU) effectively.
-
-%Inspired by SSD \citep{Liu2016SSD}, \citet{Liao2016TextBoxes} proposes an end-to-end trainable fast scene text detector, named TextBoxes
-
-%However, they need a lot of training samples to fine-tune a good network. And Some samples should be customized to meet the training requirements, like \citet{Shi2017Detecting}
-
-%These advanced deep learning based methods in Table \ref{tab.deep} obtain better detection scores than ours.
-
-%Instead, a lightweight text detector named skeleton-cut is proposed in this paper
-
-%Further, \citet{Shi2017Detecting} introduced Segments(oriented text boxes) and linking(relationship between adjacent segments) to train SSD-based network to detect multi-orientation text. %
-
-%Instead, a lightweight text detector named skeleton-cut is proposed in this paper to solve edge-adhesion problem, which is easy to run on ordinary machine without GPU
 
 \begin{table}[htbp]
 \centering
