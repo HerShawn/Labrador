@@ -543,7 +543,7 @@ Method & Recall & Precision & F-score \\
 
 As shown in table \ref{tab.msra}, our proposed approach achieves recall 0.70, precision 0.79 and f-score 0.75 on MSRA-TD dataset, which outperform other methods significantly. In summary, our method could successfully detect text in natural images with multiple orientations and mixture of multi-language.
 
-In table \ref{tab.deep}, deep learning based methods like TextBoxes \citep{Liao2016TextBoxes} have achieved excellent results. However, only high performance workstation and massive samples could effectively train the deep CNN proposed in above methods, which means the actual application scenario may be limited. Instead, skeleton-cut detector is a lightweight conventional text detector, which is designed to solve edge-adhesion problem, and could be run on ordinary machine (without a GPU) effectively.
+In table \ref{tab.deep}, deep learning based methods like TextBoxes \citep{Liao2017TextBoxes} have achieved excellent results. However, only high performance workstation and massive samples could effectively train the deep CNN proposed in above methods, which means the actual application scenario may be limited. Instead, skeleton-cut detector is a lightweight conventional text detector, which is designed to solve edge-adhesion problem, and could be run on ordinary machine (without a GPU) effectively.
 
 \begin{table}[htbp]
 \centering
@@ -553,10 +553,10 @@ In table \ref{tab.deep}, deep learning based methods like TextBoxes \citep{Liao2
 Method & Recall & Precision & F-score \\
 \hline
 \citet{Shi2017Detecting} & 83.0 & 87.7 & 85.3 \\
-\citet{Liao2016TextBoxes} & 83.0 & 88.0 & 85.0 \\
+\citet{Liao2017TextBoxes} & 83.0 & 88.0 & 85.0 \\
 \citet{Zhang2016Multi} & 78.0 & 88.0 & 83.0 \\
 \textbf{Proposed} & 89.2 & 75.5 & 82.3\\
-\citet{Liao2016TextBoxes}* & 74.0 & 86.0 & 80.0 \\
+\citet{Liao2017TextBoxes}* & 74.0 & 86.0 & 80.0 \\
 \citet{Zhang2015Symmetry} & 76.0 & 84.0 & 80.0\\
 \hline
 \end{tabular}
@@ -607,7 +607,7 @@ Table \ref{tab.recog} shows our recognition¡¯s results compared to other methods
 \section{Conclusions}
 \label{sec:conclusion}
 
-In this paper, we have presented a novel coarse-to-fine framework for scene text detection. Skeleton-cut detector is proposed in coarse detection stage: First the adhesion-junctions between text and non-text skeletons are cut to separate text candidates from background. Then these candidates are filtered to obtain the coarse detection result. Subsequently in fine detection stage, filtered candidates' SSR is proposed to enhance the difference between text area and background. Then text lines' search space is built based on SSR's horizontal projection and gradient. And we propose BTS-based text rectification method to search a path from search space to the optimal detection result. Finally we evaluate the proposed method on public datasets and compared it with existing methods. Evaluation result shows that our method is comparable with state-of-art methods.
+In this paper, we have presented a novel coarse-to-fine framework for scene text detection. Skeleton-cut detector is proposed in coarse detection stage: First the adhesion-junctions betepshtein2010detectingween text and non-text skeletons are cut to separate text candidates from background. Then these candidates are filtered to obtain the coarse detection result. Subsequently in fine detection stage, filtered candidates' SSR is proposed to enhance the difference between text area and background. Then text lines' search space is built based on SSR's horizontal projection and gradient. And we propose BTS-based text rectification method to search a path from search space to the optimal detection result. Finally we evaluate the proposed method on public datasets and compared it with existing methods. Evaluation result shows that our method is comparable with state-of-art methods.
 
 \bibliographystyle{model2-names}
 \bibliography{refs}
